@@ -1,6 +1,5 @@
 /vendor
 composer.lock
-readme.md
-*.md
+redyou.md
 screenshots
 /.idea
