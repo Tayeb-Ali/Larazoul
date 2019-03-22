@@ -1,5 +1,5 @@
 # Laravel CRUD Generator Web&Api 
-[![Build Status](https://travis-ci.org/Tayeb-Ali/ZoolCrud.svg?branch=master)](https://travis-ci.org/nafiesl/SimpleCrudGenerator)
+[![Build Status](https://travis-ci.org/Tayeb-Ali/ZoolCrud.svg?branch=master)](https://travis-ci.org/Tayeb-Ali/ZoolCrud)
 
 Need faster TDD in Laravel project? This is a simple CRUD generator complete with automated testing suite.
 
