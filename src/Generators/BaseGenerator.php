@@ -1,11 +1,11 @@
 <?php
 
-namespace Luthfi\CrudGenerator\Generators;
+namespace Tayeb\ZoolCrud\Generators;
 
 use Illuminate\Filesystem\Filesystem;
-use Luthfi\CrudGenerator\GeneratorCommand;
+use Tayeb\ZoolCrud\GeneratorCommand;
 use Illuminate\Console\DetectsApplicationNamespace;
-use Luthfi\CrudGenerator\Contracts\Generator as GeneratorContract;
+use Tayeb\ZoolCrud\Contracts\Generator as GeneratorContract;
 
 /**
  * Base Generator Class

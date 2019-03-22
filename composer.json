@@ -1,17 +1,17 @@
 {
-    "name": "luthfi/simple-crud-generator",
+    "name": "Tayeb-Ali/ZoolCrud",
     "description": "A simple CRUD generator for Laravel 5.5 (and later) with Bootstrap 4.",
     "keywords": ["crud-generator", "artisan-command", "laravel-package", "crud", "testing", "tdd-workflow"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Nafies Luthfi",
-            "email": "nafiesl@gmail.com"
+            "name": "Elteyab Hassan",
+            "email": "Elteyab.Hassan@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Luthfi\\CrudGenerator\\": "src/"
+            "Tayeb\\ZoolCrud\\": "src/"
         }
     },
     "autoload-dev": {
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Luthfi\\CrudGenerator\\ServiceProvider"
+                "Tayeb\\ZoolCrud\\ServiceProvider"
             ]
         }
     },

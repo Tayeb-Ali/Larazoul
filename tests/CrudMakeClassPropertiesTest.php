@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Luthfi\CrudGenerator\CrudMake;
+use Tayeb\ZoolCrud\CrudMake;
 
 class CrudMakeClassPropertiesTest extends TestCase
 {

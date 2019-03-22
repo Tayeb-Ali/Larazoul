@@ -1,6 +1,6 @@
 <?php
 
-namespace Luthfi\CrudGenerator\Contracts;
+namespace Tayeb\ZoolCrud\Contracts;
 
 interface Generator
 {

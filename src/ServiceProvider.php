@@ -1,6 +1,6 @@
 <?php
 
-namespace Luthfi\CrudGenerator;
+namespace Tayeb\ZoolCrud;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

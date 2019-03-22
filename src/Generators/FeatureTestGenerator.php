@@ -1,6 +1,6 @@
 <?php
 
-namespace Luthfi\CrudGenerator\Generators;
+namespace Tayeb\ZoolCrud\Generators;
 
 /**
  * Feature Test Generator Class

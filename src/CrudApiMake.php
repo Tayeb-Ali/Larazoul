@@ -1,6 +1,6 @@
 <?php
 
-namespace Luthfi\CrudGenerator;
+namespace Tayeb\ZoolCrud;
 
 class CrudApiMake extends GeneratorCommand
 {
@@ -66,11 +66,11 @@ class CrudApiMake extends GeneratorCommand
      */
     public function generateTestFiles()
     {
-        app('Luthfi\CrudGenerator\Generators\FeatureTestGenerator', ['command' => $this])->generate('api');
+        app('Tayeb\ZoolCrud\Generators\FeatureTestGenerator', ['command' => $this])->generate('api');
 
         if ($this->modelExists() == false) {
-            app('Luthfi\CrudGenerator\Generators\ModelTestGenerator', ['command' => $this])->generate();
-            app('Luthfi\CrudGenerator\Generators\ModelPolicyTestGenerator', ['command' => $this])->generate();
+            app('Tayeb\ZoolCrud\Generators\ModelTestGenerator', ['command' => $this])->generate();
+            app('Tayeb\ZoolCrud\Generators\ModelPolicyTestGenerator', ['command' => $this])->generate();
         }
     }
 
@@ -81,7 +81,7 @@ class CrudApiMake extends GeneratorCommand
      */
     public function generateController()
     {
-        app('Luthfi\CrudGenerator\Generators\ControllerGenerator', ['command' => $this])->generate('api');
+        app('Tayeb\ZoolCrud\Generators\ControllerGenerator', ['command' => $this])->generate('api');
     }
 
     /**
@@ -91,10 +91,10 @@ class CrudApiMake extends GeneratorCommand
      */
     public function generateModel()
     {
-        app('Luthfi\CrudGenerator\Generators\ModelGenerator', ['command' => $this])->generate();
-        app('Luthfi\CrudGenerator\Generators\MigrationGenerator', ['command' => $this])->generate();
-        app('Luthfi\CrudGenerator\Generators\ModelPolicyGenerator', ['command' => $this])->generate();
-        app('Luthfi\CrudGenerator\Generators\ModelFactoryGenerator', ['command' => $this])->generate();
+        app('Tayeb\ZoolCrud\Generators\ModelGenerator', ['command' => $this])->generate();
+        app('Tayeb\ZoolCrud\Generators\MigrationGenerator', ['command' => $this])->generate();
+        app('Tayeb\ZoolCrud\Generators\ModelPolicyGenerator', ['command' => $this])->generate();
+        app('Tayeb\ZoolCrud\Generators\ModelFactoryGenerator', ['command' => $this])->generate();
     }
 
     /**
@@ -104,7 +104,7 @@ class CrudApiMake extends GeneratorCommand
      */
     public function generateRoutes()
     {
-        app('Luthfi\CrudGenerator\Generators\RouteGenerator', ['command' => $this])->generate('api');
+        app('Tayeb\ZoolCrud\Generators\RouteGenerator', ['command' => $this])->generate('api');
     }
 
     /**
@@ -114,6 +114,6 @@ class CrudApiMake extends GeneratorCommand
      */
     public function generateResources()
     {
-        app('Luthfi\CrudGenerator\Generators\LangFileGenerator', ['command' => $this])->generate();
+        app('Tayeb\ZoolCrud\Generators\LangFileGenerator', ['command' => $this])->generate();
     }
 }
