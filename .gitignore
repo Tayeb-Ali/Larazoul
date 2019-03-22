@@ -1,0 +1,9 @@
+!.gitkeep
+vendor/
+
+# IDE exclusions
+.DS_Store
+Thumbs.db
+.idea
+/.idea
+.phpstorm.meta.php
