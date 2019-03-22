@@ -3,3 +3,4 @@ composer.lock
 readme.md
 *.md
 screenshots
+/.idea
