@@ -1,0 +1,40 @@
+{
+    "name": "luthfi/simple-crud-generator",
+    "description": "A simple CRUD generator for Laravel 5.5 (and later) with Bootstrap 4.",
+    "keywords": ["crud-generator", "artisan-command", "laravel-package", "crud", "testing", "tdd-workflow"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nafies Luthfi",
+            "email": "nafiesl@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Luthfi\\CrudGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "5.8.*",
+        "laravel/browser-kit-testing": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Luthfi\\CrudGenerator\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+         "test": "vendor/bin/phpunit"
+    }
+}

@@ -1,0 +1,5 @@
+
+/*
+ * Masters Endpoints
+ */
+Route::middleware('auth:api')->resource('masters', 'Api\MasterController')->names('api.masters');
