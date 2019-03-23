@@ -4,6 +4,10 @@ namespace Tests\Generators;
 
 use Tests\TestCase;
 
+/**
+ * Class ModelFactoryGeneratorTest
+ * @package Tests\Generators
+ */
 class ModelFactoryGeneratorTest extends TestCase
 {
     /** @test */
