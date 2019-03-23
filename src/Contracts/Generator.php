@@ -1,7 +1,11 @@
 <?php
 
 namespace Tayeb\ZoolCrud\Contracts;
-
+/**
+ * Interface Generator
+ * by Elteyab Ali
+ * @package Tayeb\ZoolCrud\Contracts
+ */
 interface Generator
 {
     /**
