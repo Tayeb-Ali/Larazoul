@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/Tayeb-Ali/ZoolCrud.svg?branch=master)](https://travis-ci.org/Tayeb-Ali/ZoolCrud)
 [![Total Downloads](https://poser.pugx.org/tayeb-ali/zool-crud/downloads)](https://packagist.org/packages/tayeb-ali/zool-crud)
 [![Latest Stable Version](https://poser.pugx.org/tayeb-ali/zool-crud/version)](https://packagist.org/packages/tayeb-ali/zool-crud)
+[![Latest Unstable Version](https://poser.pugx.org/tayeb-ali/zool-crud/v/unstable)](//packagist.org/packages/tayeb-ali/zool-crud)
+[![License](https://poser.pugx.org/tayeb-ali/zool-crud/license)](https://packagist.org/packages/tayeb-ali/zool-crud)
 
 Need faster TDD in Laravel project? This is a simple CRUD generator complete with automated testing suite.
 <br>
