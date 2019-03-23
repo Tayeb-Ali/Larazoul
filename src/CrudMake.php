@@ -2,6 +2,10 @@
 
 namespace Tayeb\ZoolCrud;
 
+/**
+ * Crud CrudMake Class.
+ * by Elteyab Ali
+ */
 class CrudMake extends GeneratorCommand
 {
     /**
