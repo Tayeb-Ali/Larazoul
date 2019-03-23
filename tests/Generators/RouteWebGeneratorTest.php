@@ -4,6 +4,10 @@ namespace Tests\Generators;
 
 use Tests\TestCase;
 
+/**
+ * Class RouteWebGeneratorTest
+ * @package Tests\Generators
+ */
 class RouteWebGeneratorTest extends TestCase
 {
     /** @test */
