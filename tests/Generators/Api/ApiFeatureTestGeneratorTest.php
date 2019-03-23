@@ -4,6 +4,10 @@ namespace Tests\Generators\Api;
 
 use Tests\TestCase;
 
+/**
+ * Class ApiFeatureTestGeneratorTest
+ * @package Tests\Generators\Api
+ */
 class ApiFeatureTestGeneratorTest extends TestCase
 {
     /** @test */

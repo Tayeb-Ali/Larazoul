@@ -4,6 +4,10 @@ namespace Tests;
 
 use Tayeb\ZoolCrud\CrudMake;
 
+/**
+ * Class CrudMakeClassPropertiesTest
+ * @package Tests
+ */
 class CrudMakeClassPropertiesTest extends TestCase
 {
     public function setUp(): void

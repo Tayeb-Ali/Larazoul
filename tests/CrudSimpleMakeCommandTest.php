@@ -4,6 +4,10 @@ namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 
+/**
+ * Class CrudSimpleCommandTest
+ * @package Tests
+ */
 class CrudSimpleCommandTest extends TestCase
 {
     /** @test */

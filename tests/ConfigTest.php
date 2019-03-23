@@ -1,7 +1,10 @@
 <?php
 
 namespace Tests;
-
+/**
+ * Class ConfigTest
+ * @package Tests
+ */
 class ConfigTest extends TestCase
 {
     /** @test */

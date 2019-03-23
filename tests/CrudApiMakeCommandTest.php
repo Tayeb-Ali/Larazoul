@@ -4,6 +4,10 @@ namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 
+/**
+ * Class CrudApiMakeCommandTest
+ * @package Tests
+ */
 class CrudApiMakeCommandTest extends TestCase
 {
     /** @test */

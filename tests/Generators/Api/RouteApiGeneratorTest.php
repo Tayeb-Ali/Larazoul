@@ -4,6 +4,10 @@ namespace Tests\Generators\Api;
 
 use Tests\TestCase;
 
+/**
+ * Class RouteApiGeneratorTest
+ * @package Tests\Generators\Api
+ */
 class RouteApiGeneratorTest extends TestCase
 {
     /** @test */
