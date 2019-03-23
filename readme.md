@@ -40,10 +40,17 @@ The main purpose of this package is for *TDD*.
 <br>
 
 ## How to install
-soon
 
-#### For Laravel 5.8 or later
-soon
+####Only work on Laravel **5.8** or later
+
+```bash
+# Get the package
+$ composer require tayeb-ali/zool-crud --dev
+```
+
+> The package will **auto-discovered** and ready to go.
+
+
 ## Issue/Proposal
 
 If you find any issue, or want to propose some idea to help this package better, please [create an issue](https://github.com/Tayeb-Ali/issues) in this github repo.
