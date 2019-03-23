@@ -1,6 +1,6 @@
 {
     "name": "Tayeb/ZoolCrud",
-    "description": "A simple CRUD generator for Laravel 5.5 (and later) with Bootstrap 4.",
+    "description": "A simple CRUD generator for Laravel 5.5 (and later) with Bootstrap 4. and RestApi",
     "keywords": ["crud-generator", "artisan-command", "laravel-package", "crud", "testing", "tdd-workflow"],
     "license": "MIT",
     "authors": [
