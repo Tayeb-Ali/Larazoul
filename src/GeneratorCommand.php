@@ -6,6 +6,12 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Console\DetectsApplicationNamespace;
 
+
+/**
+ * Crud Generator Command Class.
+ * by Elteyab Ali
+ */
+
 class GeneratorCommand extends Command
 {
     use DetectsApplicationNamespace;
