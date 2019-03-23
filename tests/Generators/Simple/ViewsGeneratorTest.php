@@ -5,6 +5,10 @@ namespace Tests\Generators\Simple;
 use Tests\TestCase;
 use Illuminate\Contracts\Console\Kernel;
 
+/**
+ * Class ViewsGeneratorTest
+ * @package Tests\Generators\Simple
+ */
 class ViewsGeneratorTest extends TestCase
 {
     /** @test */

@@ -4,6 +4,10 @@ namespace Tests\Generators\Simple;
 
 use Tests\TestCase;
 
+/**
+ * Class SimpleControllerGeneratorTest
+ * @package Tests\Generators\Simple
+ */
 class SimpleControllerGeneratorTest extends TestCase
 {
     /** @test */
