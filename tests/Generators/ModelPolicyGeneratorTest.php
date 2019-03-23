@@ -4,6 +4,10 @@ namespace Tests\Generators;
 
 use Tests\TestCase;
 
+/**
+ * Class ModelPolicyGeneratorTest
+ * @package Tests\Generators
+ */
 class ModelPolicyGeneratorTest extends TestCase
 {
     /** @test */
