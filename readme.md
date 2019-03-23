@@ -5,7 +5,7 @@ Need faster TDD in Laravel project? This is a simple CRUD generator complete wit
 <br>
 ## About this package
 
-This package contains artisan `make:crud` commands to create a simple CRUD feature with test classes on our Laravel 5.5 (and later) application. This package is fairly simple, to **boost test-driven development** method on our laravel application.
+This package contains artisan `make:crud` commands to create a simple CRUD feature with test classes on our Laravel 5.8 (and later) application. This package is fairly simple, to **boost test-driven development** method on our laravel application.
 
 With this package installed on local environment, we can use (e.g.) `php artisan make:crud Booking` command to generate some files :
 
@@ -32,7 +32,7 @@ It will also create this file **if it not exists** :
 
 <br>
 
-#### Main purpose
+#### Main purposef
 
 The main purpose of this package is for *TDD*.
 **faster Test-driven Development**, it generates model CRUD scaffolds complete **with Testing Classes** which will use [Laravel Browserkit Testing](https://github.com/laravel/browser-kit-testing) package and [PHPUnit](https://packagist.org/packages/phpunit/phpunit).
@@ -42,7 +42,7 @@ The main purpose of this package is for *TDD*.
 ## How to install
 soon
 
-#### For Laravel 5.6 or later
+#### For Laravel 5.8 or later
 soon
 ## Issue/Proposal
 
