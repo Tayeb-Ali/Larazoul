@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
  * Crud Generator Service Provider Class.
+ * by Elteyab Ali
  */
 class ServiceProvider extends BaseServiceProvider
 {
