@@ -9,6 +9,7 @@ use Tayeb\ZoolCrud\Contracts\Generator as GeneratorContract;
 
 /**
  * Base Generator Class
+ * by Elteyab Ali
  */
 abstract class BaseGenerator implements GeneratorContract
 {

@@ -50,6 +50,44 @@ $ composer require tayeb-ali/zool-crud --dev
 
 > The package will **auto-discovered** and ready to go.
 
+## How to use
+Just type in terminal `$ php artisan make:crud ModelName` command, it will create simple Laravel CRUD files of given **model name** completed with tests.
+
+For example we want to create CRUD for '**App\Booking**' model.
+
+```bash
+$ php artisan make:crud-simple Booking 
+or add to model file
+$ php artisan make:crud-simple {fileName}/Booking
+
+Booking resource route generated on routes/web.php.
+Booking model generated.
+Booking table migration generated.
+BookingController generated.
+Booking index view file generated.
+Booking form view file generated.
+lang/app.php generated.
+Booking lang files generated.
+Booking model factory generated.
+Booking model policy generated.
+AuthServiceProvider class has been updated.
+BrowserKitTest generated.
+ManageVehiclesTest generated.
+BookingTest (model) generated.
+BookingPolicyTest (model policy) generated.
+ZoolCRUD files generated successfully!
+```
+
+Make sure we have **set database credential** on `.env` file, then :
+
+```bash
+$ php artisan migrate
+$ php artisan serve
+```
+
+Then visit our application url: `http://localhost:8000/bookings`.
+
+<br>
 
 ## Issue/Proposal
 
