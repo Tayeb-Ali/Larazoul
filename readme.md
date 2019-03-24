@@ -92,6 +92,34 @@ $ php artisan serve
 
 Then visit our application url: `http://localhost:8000/bookings`.
 
+
+<br>
+
+#### Usage on Fresh Install Laravel
+
+If you are using this package from from the fresh laravel project.
+
+```bash
+# This is example commands for Ubuntu users.
+$ composer create-project laravel/laravel --prefer-dist project-directory
+$ cd project-directory
+$ vim .env # Edit your .env file to update database configuration
+
+# Install the package
+$ composer require tayeb-ali/zool-crud --dev
+
+# Create auth scaffolds to get layout.app view, register and login feature
+$ php artisan make:auth
+
+$ php artisan make:crud Booking # Model name in singular
+# I really suggest "git commit" your project right before run make:crud command
+
+$ php artisan migrate
+$ php artisan serve
+# Visit your route http://127.0.0.1:8000
+# Register as new user
+# Visit your route http://127.0.0.1:8000/bookings
+```
 <br>
 
 ## Issue/Proposal
