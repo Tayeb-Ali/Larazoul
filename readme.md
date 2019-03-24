@@ -166,7 +166,15 @@ If we want to generate API Controller with feature tests, we use following comma
 ```bash
 $ php artisan make:crud-api Vehicle
 ```
+By default, we use Laravel **Token Based Authentication**, so we need to update our user model.
 
+1. Add `api_token` **column** on our **users_table_migration**.
+2. Add `api_token` as **fillable** property on **User model**.
+3. Add `api_token` **field** on our **UserFactory**.
+
+<br>
+
+#### API Usage
 
 ## Issue/Proposal
 
