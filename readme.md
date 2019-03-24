@@ -161,6 +161,11 @@ We can also generates views that use Bootstrap 3 with `--bs3` command option, eg
 <br>
 
 #### For API
+If we want to generate API Controller with feature tests, we use following command :
+
+```bash
+$ php artisan make:crud-api Vehicle
+```
 
 
 ## Issue/Proposal
