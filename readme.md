@@ -46,7 +46,7 @@ The main purpose of this package is for *TDD*.
 
 ## How to install
 
-####Only work on Laravel **5.8** or later
+#### Only work on Laravel **5.8** or later
 
 ```bash
 # Get the package
