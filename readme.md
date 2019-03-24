@@ -154,6 +154,12 @@ The generated view files **use Bootstrap 4 by default** (for Laravel 5.6 and lat
 
 <br>
 
+#### Bootstrap 3 Views
+
+We can also generates views that use Bootstrap 3 with `--bs3` command option, eg for Laravel version 5.5.
+
+<br>
+
 ## Issue/Proposal
 
 If you find any issue, or want to propose some idea to help this package better, please [create an issue](https://github.com/Tayeb-Ali/issues) in this github repo.
