@@ -140,6 +140,11 @@ $ php artisan make:crud-simple ModelName --bs3
 $ php artisan make:crud-api ModelName
 ```
 
+<br>
+
+#### Model Attribute/column
+
+The Model and table will **only have 2 pre-definded** attributes or columns : **name** and **description** on each generated model and database table. You can continue working on other column on the table.
 
 <br>
 
