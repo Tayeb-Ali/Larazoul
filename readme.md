@@ -61,6 +61,7 @@ Just type in terminal `$ php artisan make:crud ModelName` command, it will creat
 For example we want to create CRUD for '**App\Booking**' model.
 
 ```bash
+php artisan make:auth
 $ php artisan make:crud-simple Booking 
 or add to model file
 $ php artisan make:crud-simple {fileName}/Booking
