@@ -120,6 +120,27 @@ $ php artisan serve
 # Register as new user
 # Visit your route http://127.0.0.1:8000/bookings
 ```
+
+#### Available Commands
+
+```bash
+# Create Full CRUD feature with tests
+$ php artisan make:crud ModelName
+
+# Create Full CRUD feature with tests and Bootstrap 3 views
+$ php artisan make:crud ModelName --bs3
+
+# Create Simple CRUD feature with tests
+$ php artisan make:crud-simple ModelName
+
+# Create Simple CRUD feature with tests and Bootstrap 3 views
+$ php artisan make:crud-simple ModelName --bs3
+
+# Create API CRUD feature with tests
+$ php artisan make:crud-api ModelName
+```
+
+
 <br>
 
 ## Issue/Proposal
