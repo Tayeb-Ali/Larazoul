@@ -205,6 +205,39 @@ The generated functional tests will give you examples of how to adapt this code 
 
 ## Config file
 
+You can configure your own by publishing the config file:
+
+```bash
+$ php artisan vendor:publish --provider="Tayeb\ZoolCrud\ServiceProvider"
+```
+
+That will generate `config/simple-crud.php` file.
+
+By default, this package have some configuration:
+
+```php
+<?php
+
+return [
+    // The master view layout that generated views will extends
+    'default_layout_view' => 'layouts.app',
+
+    // The base test case class path for generated testing classes
+    'base_test_path' => 'tests/BrowserKitTest.php',
+
+    // The base test class full name
+    'base_test_class' => 'Tests\BrowserKitTest',
+];
+```
+
+<br>
+
+## Attention
+
+- The package will creates the **Model** class file, the command will stop if the **Model already exists**.
+- **You need** a `resources/views/layouts/app.blade.php` view file, simply create one with `php artisan make:auth` command. You can change this configuration via the `config/simple-crud.php` file.
+
+<br>
 
 ## Issue/Proposal
 
