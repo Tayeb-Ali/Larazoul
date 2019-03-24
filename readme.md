@@ -142,15 +142,15 @@ $ php artisan make:crud-api ModelName
 
 <br>
 
-#### Bootstrap 4 Views
-
-The generated view files **use Bootstrap 4 by default** (for Laravel 5.6 and later).
-
-<br>
-
 #### Model Attribute/column
 
 The Model and table will **only have 2 pre-definded** attributes or columns : **name** and **description** on each generated model and database table. You can continue working on other column on the table.
+
+<br>
+
+#### Bootstrap 4 Views
+
+The generated view files **use Bootstrap 4 by default** (for Laravel 5.6 and later).
 
 <br>
 
