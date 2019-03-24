@@ -8,6 +8,7 @@
 Need faster TDD in Laravel project? This is a simple CRUD generator complete with automated testing suite.
 <br>
 ## About this package
+This is sample Package for Start Up Project if you need something professional use  [laravel-generator](https://github.com/InfyOmLabs/laravel-generator) .
 
 This package contains artisan `make:crud` commands to create a simple CRUD feature with test classes on our Laravel 5.8 (and later) application. This package is fairly simple, to **boost test-driven development** method on our laravel application.
 
