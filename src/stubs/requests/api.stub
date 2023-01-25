@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Modules\DummyClass\Http\Requests\Api\DummyClass;
+
+use App\Modules\DummyClass\Models\DummyModel;
+
+class DummyClassRequest
+{
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+
+    public function rules()
+    {
+        $array =  [
+DummyRules
+        ];
+
+        /*
+        *   Override the original rules
+        */
+
+       if(request()->route()->methods()  == 'PUT'){
+            $DummySmallModel = DummyModel::find($this->route()->parameter('DummySmallModel'));
+            $overOverRideRules = [
+DummyOverRide
+            ];
+             return  $overOverRideRules + $array;
+        }
+
+        return $array;
+
+    }
+}

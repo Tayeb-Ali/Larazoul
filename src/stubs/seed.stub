@@ -1,0 +1,70 @@
+<?php
+namespace App\Modules\DummyClass\Database\Seeds;
+
+use Illuminate\Database\Seeder;
+use Larazoul\Larazoul\Larazoul\Models\MenuItem;
+
+class DummyClassSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+        /*
+         * module row insert in case you fresh your database
+         * you will find your module info still save
+         */
+
+DummyModule
+
+        \Larazoul\Larazoul\Larazoul\Models\Module::create($array);
+
+        /*
+         * column row insert in case you fresh your database
+         * you will find your column info still save
+         */
+
+DummyColumn
+
+        \Larazoul\Larazoul\Larazoul\Models\Column::insert($array);
+
+        /*
+       * column Details row insert in case you fresh your database
+       * you will find your column Details info still save
+       */
+
+DummyDetails
+
+        \Larazoul\Larazoul\Larazoul\Models\ColumnDetail::insert($array);
+
+        /*
+        * Module Relation row insert in case you fresh your database
+        * you will find your column Details info still save
+        */
+
+DummyRelation
+
+       if(!empty($array)){
+          \Larazoul\Larazoul\Larazoul\Models\Relation::insert($array);
+       }
+
+       /*
+       * Menu Items
+       */
+
+DummyParentMenuItems
+
+       $parent =  MenuItem::create($parent);
+
+DummyChildMenuItems
+
+        if(!empty($child)){
+             MenuItem::insert($child);
+        }
+
+    }
+}

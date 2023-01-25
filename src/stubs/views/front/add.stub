@@ -1,0 +1,29 @@
+@extends('layouts.app')
+
+@section('content')
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            @lang('DummySmallName::DummySmallName.add')
+        </h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> @lang('DummySmallName::DummySmallName.home')</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('front.DummySmallName.index') }}"> @lang('DummySmallName::DummySmallName.DummySmallName')</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a class="active">@lang('DummySmallName::DummySmallName.add')</a></li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+
+            {!! Form::open(['route' => 'front.DummySmallName.store' , 'role' => 'form' , 'files' => true]) !!}
+
+                    @include('DummySmallName::front.DummySmallName.form')
+
+                    {!! Form::submit(trans('DummySmallName::DummySmallName.Save') , ['class' => 'btn btn-info']) !!}
+
+            {!! Form::close() !!}
+
+    </section>
+    <!-- /.content -->
+@endsection

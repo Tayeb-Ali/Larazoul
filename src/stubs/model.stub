@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Modules\DummyNameSpace\Models;
+
+use Illuminate\Database\Eloquent\Scope;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+
+class DummyClassName extends Model
+{
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+    protected $fillable = [
+DummyFillAble
+    ];
+DummyRelation
+DummyLangColumns
+DummyMultiValue
+
+     /**
+     * Scope a query to only include active DummyClassName.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeActive($query)
+    {
+          return $query->where('active', 1);
+    }
+
+}

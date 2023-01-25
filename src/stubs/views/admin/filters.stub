@@ -1,0 +1,10 @@
+{!! Form::open(['route' => 'DummyName.index' , 'method' => 'GET']) !!}
+<div class="row">
+DummyFilters
+<div class="col-lg-2" style="margin-top: 30px;">
+    @include("larazoul::fileds.php.radio" , [  "label"  => trans("larazoul::larazoul.Active") , "array" => [0 => trans("larazoul::larazoul.No") , 1 => trans("larazoul::larazoul.Yes") ] , "name" =>"active" ])
+</div>
+	{!! Form::submit(trans('DummyName::DummyName.Search') , ['class' => 'btn btn-info' , 'style' => "margin-top:25px"]) !!}
+	<a href="{{ route('DummyName.index') }}" class="btn btn-warning"  style="margin-top:25px">{{ trans('DummyName::DummyName.Reset') }}</a>
+</div>
+{!! Form::close() !!}

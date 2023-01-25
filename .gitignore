@@ -1,6 +1,6 @@
+/node_modules
 /vendor
-composer.lock
-redyou.md
-screenshots
+.env
+npm-debug.log
 /.idea
-zool.sh
+/.vscode

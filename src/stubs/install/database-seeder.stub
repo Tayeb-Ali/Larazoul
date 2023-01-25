@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use \Larazoul\Larazoul\Larazoul\Traits\LaraflatSeederTrait as LaraFlatSeeder;
+
+class DatabaseSeeder extends Seeder
+{
+    use LaraFlatSeeder;
+
+
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+         // $this->call(UsersTableSeeder::class);
+
+        /*
+         * loop on larazoul modules
+         * get seeders and call them
+         * this important for if you fresh , refresh
+         * data base your columns and your details
+         * will not lose
+         */
+
+        $this->getLaraFlatSeeder();
+
+    }
+
+DummyName
+}

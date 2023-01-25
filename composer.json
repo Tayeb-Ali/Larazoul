@@ -1,40 +1,39 @@
 {
-    "name": "tayeb-ali/zool-crud",
-    "description": "A simple CRUD generator just for Laravel 5.8 (and later) with Bootstrap 4. and RestApi",
-    "keywords": ["laravel-restapi", "restapi", "laravel-crud-generator", "artisan-command", "laravel-package", "crud", "testing", "tdd-workflow"],
+    "name": "tayeb-ali/larazoul",
+    "description": "LaraZoul new Laravel cms and Crud package",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Elteyab Hassan",
-            "email": "Elteyab.Hassan@gmail.com"
+            "email": "me@elteyab.sd"
         }
     ],
+    "require": {
+        "php": "^8.1",
+        "laravelcollective/html": "^6.3",
+        "mcamara/laravel-localization": "^1.7",
+        "laravel/helpers": "^1.6"
+    },
     "autoload": {
         "psr-4": {
-            "Tayeb\\ZoolCrud\\": "src/"
+            "larazoul\\Larazoul\\": "src/"
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "orchestra/testbench-browser-kit": "~3.1"
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Larazoul\\Larazoul\\Tests\\": "tests/"
         }
-    },
-    "require": {
-        "php": ">=7.0.0",
-        "illuminate/support": "5.8.*",
-        "laravel/browser-kit-testing": "^5.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "~3.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tayeb\\ZoolCrud\\ServiceProvider"
+                "Larazoul\\Larazoul\\Providers\\LarazoulServiceProvider"
             ]
         }
-    },
-    "scripts": {
-         "test": "vendor/bin/phpunit"
     }
 }

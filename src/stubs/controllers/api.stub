@@ -1,102 +1,148 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Modules\DummyClass\Http\Controllers\Api;
 
-use fullMstr;
 use App\Http\Controllers\Controller;
+use App\Modules\DummyClass\Models\DummyModelName;
+use App\Modules\DummyClass\Http\Requests\Api\DummyClass\DummyClassRequest;
 use Illuminate\Http\Request;
+use App\Modules\DummyClass\Http\Resources\DummyClass  as DummyClassResources;
+use Illuminate\Support\Facades\Validator;
+use Larazoul\Larazoul\Traits\ApiTrait;
+use Larazoul\Larazoul\Traits\UploadFile;
 
-class MasterController extends Controller
+class DummyClassController extends Controller
 {
+
+    use ApiTrait ,  UploadFile;
+
+    protected $model;
+    protected $request;
+
+    public function __construct(DummyModelName $model , Request $request)
+    {
+        $this->model = $model;
+        $this->request = $request;
+    }
+
     /**
-     * Get a listing of the singleMstr.
+     * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $singleMstrQuery = Master::query();
-        $singleMstrQuery->where('name', 'like', '%'.request('q').'%');
-        $mstrCollections = $singleMstrQuery->paginate(25);
+        $rows = $this->model;
+DummyIndex
+        $rows = $this->order($rows);
 
-        return $mstrCollections;
+        $rows = $this->filter($rows);
+
+        $rows = $rows->active()->paginate(10);
+
+        return $this->apiResponse(DummyClassResources::collection($rows));
+    }
+
+
+    /*
+    * filter data
+    */
+
+    protected function filter($rows){
+
+DummyFilters
+        return $rows;
+    }
+
+    /*
+    * order data
+    */
+
+   protected function order($rows){
+
+    $order = $this->request->has('orderByType') ? $this->request->get('orderByType') : "desc";
+
+    if($this->request->has('orderBy') && $this->request->get('orderBy') != ''){
+        $rows = $rows->orderBy($this->request->get('orderBy')  , $order);
+    }else{
+        $rows = $rows->orderBy('id'  , 'desc');
+    }
+
+    return $rows;
+
     }
 
     /**
-     * Store a newly created singleMstr in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DummyClassRequest $request)
     {
-        $this->authorize('create', new Master);
-
-        $newMaster = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
-        ]);
-        $newMaster['creator_id'] = auth()->id();
-
-        $singleMstr = Master::create($newMaster);
-
-        return response()->json([
-            'message' => __('master.created'),
-            'data'    => $singleMstr,
-        ], 201);
-    }
-
-    /**
-     * Get the specified singleMstr.
-     *
-     * @param  \fullMstr  $singleMstr
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function show(Master $singleMstr)
-    {
-        return $singleMstr;
-    }
-
-    /**
-     * Update the specified singleMstr in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \fullMstr  $singleMstr
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function update(Request $request, Master $singleMstr)
-    {
-        $this->authorize('update', $singleMstr);
-
-        $singleMstrData = $request->validate([
-            'name'        => 'required|max:60',
-            'description' => 'nullable|max:255',
-        ]);
-        $singleMstr->update($singleMstrData);
-
-        return response()->json([
-            'message' => __('master.updated'),
-            'data'    => $singleMstr,
-        ]);
-    }
-
-    /**
-     * Remove the specified singleMstr from storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \fullMstr  $singleMstr
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function destroy(Request $request, Master $singleMstr)
-    {
-        $this->authorize('delete', $singleMstr);
-
-        $request->validate(['master_id' => 'required']);
-
-        if ($request->get('master_id') == $singleMstr->id && $singleMstr->delete()) {
-            return response()->json(['message' => __('master.deleted')]);
+        $errors = Validator::make($this->request->all(), $request->rules());
+        if ($errors->fails()) {
+             return $this->validateResponseError($errors);
         }
+DummyUploadFile
+        $row = $this->model->create($this->request->all());
+DummyRelation
+        return $this->apiResponse(new DummyClassResources($row));
+    }
 
-        return response()->json('Unprocessable Entity.', 422);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $row = $this->model->active()->DummyShowEditfind($id);
+        if(!$row){
+            return $this->itemNotFoundResponseError();
+        }
+        return $this->apiResponse(new DummyClassResources($row));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(DummyClassRequest $request, $id)
+    {
+        $row = $this->model->find($id);
+        if(!$row){
+            return $this->itemNotFoundResponseError();
+        }
+        $errors = Validator::make($this->request->all(), $request->rules());
+        if ($errors->fails()) {
+            return $this->validateResponseError($errors);
+        }
+DummyEditUpload
+        $row->update($this->request->all());
+DummyRelation
+        return $this->apiResponse(new DummyClassResources($row));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $row = $this->post->find($id);
+        if(!$row){
+            return $this->itemNotFoundResponseError();
+        }
+DummyDeleteFile
+        $row->delete();
+        return $this->apiResponse(true);
     }
 }

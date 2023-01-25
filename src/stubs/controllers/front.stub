@@ -1,0 +1,153 @@
+<?php
+
+namespace App\Modules\DummyClass\Http\Controllers\FrontEnd;
+
+use App\Http\Controllers\Controller;
+use App\Modules\DummyClass\Models\DummyModelName;
+use App\Modules\DummyClass\Http\Requests\Front\DummyClass\DummyClassRequest;
+use Illuminate\Http\Request;
+use Larazoul\Larazoul\Traits\UploadFile;
+use Illuminate\Support\Facades\Storage;
+
+class DummyClassController extends Controller
+{
+
+    use UploadFile;
+
+    protected $model;
+    protected $request;
+
+    public function __construct(DummyModelName $model , Request $request)
+    {
+        $this->model = $model;
+        $this->request = $request;
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $rows = $this->model;
+DummyIndex
+        $rows = $this->order($rows);
+
+        $rows = $this->filter($rows);
+
+        $rows = $rows->active()->paginate(10);
+
+        return view('DummySmallClass::front.DummySmallClass.index' , compact('rows'));
+    }
+
+
+    /*
+    * filter data
+    */
+
+    protected function filter($rows){
+
+DummyFilters
+        return $rows;
+    }
+
+    /*
+    * order data
+    */
+
+   protected function order($rows){
+
+    $order = $this->request->has('orderByType') ? $this->request->get('orderByType') : "desc";
+
+    if($this->request->has('orderBy') && $this->request->get('orderBy') != ''){
+        $rows = $rows->orderBy($this->request->get('orderBy')  , $order);
+    }else{
+        $rows = $rows->orderBy('id'  , 'desc');
+    }
+
+    return $rows;
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $row = $this->model;
+        return view('DummySmallClass::front.DummySmallClass.add' , compact('row'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(DummyClassRequest $request)
+    {
+        $this->request = $request->all();
+DummyUploadFile
+        $row = $this->model->create($this->request);
+DummyRelation
+        return redirect(route('front.DummySmallClass.index'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $row = $this->model->active()->DummyShowEditfindOrfail($id);
+        return view('DummySmallClass::front.DummySmallClass.show' , compact('row'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $row = $this->model->DummyShowEditfindOrfail($id);
+        return view('DummySmallClass::front.DummySmallClass.edit' , compact('row'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(DummyClassRequest $request, $id)
+    {
+        $row = $this->model->findOrFail($id);
+        $this->request = $request->all();
+DummyEditUpload
+        $row->update($this->request);
+DummyRelation
+        return redirect(route('front.DummySmallClass.index'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $row = $this->model->findOrFail($id);
+DummyDeleteFile
+        $row->delete();
+        return redirect(route('front.DummySmallClass.index'));
+    }
+}

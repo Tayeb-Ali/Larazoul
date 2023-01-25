@@ -1,0 +1,10 @@
+<?php
+
+return [
+    /*
+     * the application mode
+     * local , production
+     */
+    'mode' => 'local',
+'DummyFillAble'
+];

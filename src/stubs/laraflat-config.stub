@@ -1,0 +1,12 @@
+<?php
+
+return [
+    'upload_path' => [
+        'images' => '/public/images',
+        'files' =>  '/public/files',
+        'small_image' =>  '/public/images/small',
+        'large_image' =>  '/public/images/large',
+        'original_image' =>  '/public/images/original',
+    ]
+];
+DummyName

@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Modules\DummyClassName\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class LaraflatDummyClassNameServicesProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+
+    public function boot()
+    {
+           /*
+             * load language files
+             */
+
+            $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'DummyName');
+
+           /*
+            * load  migrations files
+            */
+
+            $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
+
+          /*
+           * load  routes
+           */
+
+DummyRoute
+           /*
+            * load views
+            */
+
+            $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'DummyName');
+
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+
+    public function register()
+    {
+
+        /*
+        * merge config file
+        */
+
+        $this->mergeConfigFrom(__DIR__ . '/../Config/DummyConfigName.php', 'DummyConfigName');
+    }
+}

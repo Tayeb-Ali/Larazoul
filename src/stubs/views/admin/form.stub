@@ -1,0 +1,3 @@
+DummyRelation
+DummyForm
+@include("larazoul::fileds.php.radio" , [  "label"  => trans("larazoul::larazoul.Active") , "array" => [0 => trans("larazoul::larazoul.No") , 1 => trans("larazoul::larazoul.Yes") ]  , "selectedArray" => (array) $row->active ?? null  ,  "name" =>"active" ])

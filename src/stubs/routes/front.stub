@@ -1,0 +1,15 @@
+<?php
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect' ]], function () {
+
+    Route::group([
+        'namespace' => 'DummyNameSpace',
+        'middleware' => ['web']
+    ], function () {
+
+
+    Route::resource('DummyUrl', 'DummyControllerNameController' , ['as' => 'front']);
+    Route::get('DummyUrl/delete/{id}/{field}', 'DummyControllerNameController@deleteFile')->name('DummyUrl.delete');
+    });
+
+});

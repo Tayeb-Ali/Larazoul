@@ -1,0 +1,9 @@
+{!! Form::open(['route' => 'front.DummyName.index' , 'method' => 'GET']) !!}
+<div class="row">
+DummyFilters
+</div>
+<div class="mb-3">
+	{!! Form::button(trans('DummyName::DummyName.Search') , ['class' => 'btn btn-info' , 'type' => 'submit']) !!}
+	<a href="{{ route('front.DummyName.index') }}" class="btn btn-warning" >{{ trans('DummyName::DummyName.Reset') }}</a>
+</div>
+{!! Form::close() !!}

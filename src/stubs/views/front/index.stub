@@ -1,0 +1,54 @@
+@extends('layouts.app')
+
+@section('content')
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            @lang('DummySmallName::DummySmallName.DummySmallName')
+        </h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> @lang('DummySmallName::DummySmallName.home')</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="active">@lang('DummySmallName::DummySmallName.DummySmallName')</a></li>
+            </ol>
+        </nav>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+                {{-- filter section --}}
+                    @include("DummySmallName::front.DummySmallName.filters")
+                {{-- filter section --}}
+                <table class="table table-bordered table-hover table-striped ">
+                    <tr>
+DummyHeader
+                        <th width="20">
+                            @lang('DummySmallName::DummySmallName.Edit')
+                        </th>
+                       <th width="20">
+                            @lang('DummySmallName::DummySmallName.Delete')
+                       </th>
+                    </tr>
+                    @foreach($rows as $row)
+                        <tr>
+DummyBody
+                            <th>
+                                <a href="{{ route('front.DummySmallName.edit' , ['id' => $row->id ]) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                            </th>
+                            <th>
+                                 {!! Form::open(['route' => ['front.DummySmallName.destroy' , $row->id], 'method' => 'delete']) !!}
+                                       <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                                 {!! Form::close() !!}
+                            </th>
+                        </tr>
+                    @endforeach
+                </table>
+            <div>
+                {{ $rows->links() }}
+                <a href="{{ route('front.DummySmallName.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> @lang('DummySmallName::DummySmallName.create')</a>
+            </div>
+            <!-- /.box-footer-->
+        </div>
+        <!-- /.box -->
+    </section>
+    <!-- /.content -->
+@endsection
