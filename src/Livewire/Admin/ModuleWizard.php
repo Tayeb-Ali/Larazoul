@@ -136,7 +136,7 @@ class ModuleWizard extends Component
         ];
     }
 
-    public function saveAndGenerate(): \Illuminate\Http\RedirectResponse
+    public function saveAndGenerate()
     {
         $this->validate();
 

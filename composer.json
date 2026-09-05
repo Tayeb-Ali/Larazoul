@@ -1,6 +1,6 @@
 {
     "name": "tayeb-ali/larazoul",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "LaraZoul - A modern Laravel CMS and CRUD module generator rebuilt for Laravel 13 (Blade + Tailwind + Livewire).",
     "keywords": ["laravel", "cms", "crud", "generator", "admin", "livewire", "tailwind"],
     "license": "MIT",
