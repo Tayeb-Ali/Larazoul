@@ -1,0 +1,66 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Http\Resources\DummyResourceClass;
+use App\Models\DummyModelClass;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class DummyClass extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(): JsonResponse
+    {
+        return DummyResourceClass::collection(DummyModelClass::paginate(15));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            // TODO: add validation rules
+        ]);
+
+        $record = DummyModelClass::create($validated);
+
+        return (new DummyResourceClass($record))->response()->setStatusCode(201);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(DummyModelClass $record): JsonResponse
+    {
+        return new DummyResourceClass($record);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, DummyModelClass $record): JsonResponse
+    {
+        $validated = $request->validate([
+            // TODO: add validation rules
+        ]);
+
+        $record->update($validated);
+
+        return new DummyResourceClass($record);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(DummyModelClass $record): JsonResponse
+    {
+        $record->delete();
+
+        return response()->json(null, 204);
+    }
+}

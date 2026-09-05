@@ -1,0 +1,10 @@
+@extends('layouts.app')
+
+@section('title', 'DummyTitle')
+
+@section('content')
+    <div class="container mx-auto py-8">
+        <h1 class="text-2xl font-bold mb-6">{{ __('Create').' '.'DummyTitle' }}</h1>
+        @include('admin.DummyPluralVariable.form')
+    </div>
+@endsection

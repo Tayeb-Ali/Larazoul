@@ -1,0 +1,20 @@
+@extends('layouts.app')
+
+@section('title', 'DummyTitle')
+
+@section('content')
+    <div class="container mx-auto py-8">
+        <h1 class="text-2xl font-bold mb-6">'DummyTitle'</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @forelse ($records as $record)
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-semibold">{{ $record->id }}</h2>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">{{ __('Read more') }} &rarr;</a>
+                </div>
+            @empty
+                <p class="text-gray-500">{{ __('No records').' DummyTitle' }}</p>
+            @endforelse
+        </div>
+    </div>
+@endsection

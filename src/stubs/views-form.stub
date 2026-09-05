@@ -1,0 +1,21 @@
+@php
+    $isEdit = isset($DummyVariable) && $DummyVariable?->exists;
+    $action = $isEdit
+        ? route('admin.DummyPluralVariable.update', $DummyVariable)
+        : route('admin.DummyPluralVariable.store');
+    $method = $isEdit ? 'PUT' : 'POST';
+@endphp
+
+<form action="{{ $action }}" method="POST" class="max-w-2xl bg-white rounded-lg shadow p-6 space-y-4">
+    @csrf
+    @method($method)
+
+    {{-- TODO: render inputs dynamically per module fields --}}
+
+    <div class="flex justify-end pt-4">
+        <button type="submit"
+                class="inline-flex items-center px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            {{ __('Save') }}
+        </button>
+    </div>
+</form>

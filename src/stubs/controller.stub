@@ -1,0 +1,84 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\DummyModelClass;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class DummyClass extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(): View
+    {
+        $records = DummyModelClass::latest()->paginate(15);
+
+        return view('DummyVariable.index', compact('records'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(): View
+    {
+        return view('DummyVariable.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            // TODO: add validation rules for DummyTable
+        ]);
+
+        DummyModelClass::create($validated);
+
+        return redirect()->route('DummyPluralRoute.index')->with('success', __('Created successfully.'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(DummyModelClass $DummyVariable): View
+    {
+        return view('DummyVariable.show', compact('DummyVariable'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(DummyModelClass $DummyVariable): View
+    {
+        return view('DummyVariable.edit', compact('DummyVariable'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, DummyModelClass $DummyVariable): RedirectResponse
+    {
+        $validated = $request->validate([
+            // TODO: add validation rules for DummyTable
+        ]);
+
+        $DummyVariable->update($validated);
+
+        return redirect()->route('DummyPluralRoute.index')->with('success', __('Updated successfully.'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(DummyModelClass $DummyVariable): RedirectResponse
+    {
+        $DummyVariable->delete();
+
+        return redirect()->route('DummyPluralRoute.index')->with('success', __('Deleted successfully.'));
+    }
+}

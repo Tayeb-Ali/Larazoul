@@ -1,36 +1,25 @@
 <?php
 
-namespace App\Modules\DummyNameSpace\Models;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class DummyClassName extends Model
+class DummyClass extends Model
 {
+    use HasFactory;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'DummyTable';
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
-
-    protected $fillable = [
-DummyFillAble
-    ];
-DummyRelation
-DummyLangColumns
-DummyMultiValue
-
-     /**
-     * Scope a query to only include active DummyClassName.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeActive($query)
-    {
-          return $query->where('active', 1);
-    }
-
+    protected $fillable = [DummyFillable];
 }

@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers\Front;
+
+use App\Http\Controllers\Controller;
+use App\Models\DummyModelClass;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class DummyClass extends Controller
+{
+    /**
+     * Show the public listing.
+     */
+    public function index(): View
+    {
+        $records = DummyModelClass::latest()->paginate(12);
+
+        return view('front.DummyVariable.index', compact('records'));
+    }
+
+    /**
+     * Show a single resource.
+     */
+    public function show(DummyModelClass $DummyVariable): View
+    {
+        return view('front.DummyVariable.show', compact('DummyVariable'));
+    }
+}

@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('title', 'DummyTitle')
+
+@section('content')
+    <div class="container mx-auto py-8">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-2xl font-bold">{{ 'DummyTitle' }}</h1>
+            <a href="{{ route('admin.DummyPluralVariable.create') }}"
+               class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                {{ __('Add') }} +
+            </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{{ __('Title') }}</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{{ __('Actions') }}</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    @forelse ($records as $record)
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $record->id }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $record->id }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                <a href="{{ route('admin.DummyPluralVariable.edit', $record) }}"
+                                   class="text-blue-600 hover:text-blue-800">{{ __('Edit') }}</a>
+
+                                <form action="{{ route('admin.DummyPluralVariable.destroy', $record) }}" method="POST" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-600 hover:text-red-800 ml-2">{{ __('Delete') }}</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="3" class="px-6 py-12 text-center text-sm text-gray-500">{{ __('No records').' '.'DummyTitle' }}</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6">
+            {{ $records->links() }}
+        </div>
+    </div>
+@endsection

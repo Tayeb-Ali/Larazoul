@@ -1,8 +1,9 @@
 {
     "name": "tayeb-ali/larazoul",
-    "description": "LaraZoul new Laravel cms and Crud package",
+    "version": "4.0.0",
+    "description": "LaraZoul - A modern Laravel CMS and CRUD module generator rebuilt for Laravel 13 (Blade + Tailwind + Livewire).",
+    "keywords": ["laravel", "cms", "crud", "generator", "admin", "livewire", "tailwind"],
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Elteyab Hassan",
@@ -10,30 +11,33 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "laravelcollective/html": "^6.3",
-        "mcamara/laravel-localization": "^1.7",
-        "laravel/helpers": "^1.6"
+        "php": "^8.2",
+        "laravel/framework": "^11.0|^12.0|^13.0",
+        "livewire/livewire": "^3.0"
     },
     "autoload": {
         "psr-4": {
-            "larazoul\\Larazoul\\": "src/"
+            "Larazoul\\Larazoul\\": "src/"
         }
-    },
-    "require-dev": {
-        "orchestra/testbench": "~3.0",
-        "orchestra/testbench-browser-kit": "~3.1"
     },
     "autoload-dev": {
         "psr-4": {
             "Larazoul\\Larazoul\\Tests\\": "tests/"
         }
     },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Larazoul\\Larazoul\\Providers\\LarazoulServiceProvider"
+                "Larazoul\\Larazoul\\LarazoulServiceProvider"
             ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

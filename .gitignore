@@ -1,8 +1,9 @@
-/node_modules
-/vendor
-.env
-npm-debug.log
-/.idea
-/.vscode
+/vendor/
 composer.lock
-.DS_Store
+.phpunit.result.cache
+phpunit.xml
+.phpunit.cache/
+/tests/tmp/
+.idea/
+.vscode/
+*.log
